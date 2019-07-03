@@ -1,33 +1,33 @@
-workflow "New workflow" {
+workflow "Project build" {
   on = "push"
-  resolves = ["GitHub Action for npm-1", "GitHub Action for npm-2", "GitHub Action for npm-3", "GitHub Action for npm-4"]
+  resolves = ["Build", "Check formatting", "Lint", "Compile"]
 }
 
-action "GitHub Action for npm" {
+action "Install" {
   uses = "actions/npm@59b64a598378f31e49cb76f27d6f3312b582f680"
   args = "ci"
 }
 
-action "GitHub Action for npm-1" {
+action "Build" {
   uses = "actions/npm@59b64a598378f31e49cb76f27d6f3312b582f680"
-  needs = ["GitHub Action for npm"]
+  needs = ["Install"]
   args = "run build"
 }
 
-action "GitHub Action for npm-2" {
+action "Check formatting" {
   uses = "actions/npm@59b64a598378f31e49cb76f27d6f3312b582f680"
-  needs = ["GitHub Action for npm"]
+  needs = ["Install"]
   args = "run prettier"
 }
 
-action "GitHub Action for npm-3" {
+action "Lint" {
   uses = "actions/npm@59b64a598378f31e49cb76f27d6f3312b582f680"
-  needs = ["GitHub Action for npm"]
+  needs = ["Install"]
   args = "run tslint"
 }
 
-action "GitHub Action for npm-4" {
+action "Compile" {
   uses = "actions/npm@59b64a598378f31e49cb76f27d6f3312b582f680"
-  needs = ["GitHub Action for npm"]
+  needs = ["Install"]
   args = "run compile"
 }
