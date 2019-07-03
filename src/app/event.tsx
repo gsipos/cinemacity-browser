@@ -18,7 +18,7 @@ const EventRoot = styled.div<{ poster: string }>`
   padding: 8px;
   align-items: center;
 
-  background: RGBA(0,0,0,0.65) url(${p => p.poster});
+  background: RGBA(0, 0, 0, 0.65) url(${p => p.poster});
   background-blend-mode: darken;
   color: #fcfcfc;
 
