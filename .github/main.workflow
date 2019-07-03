@@ -4,7 +4,7 @@ workflow "Project build" {
     "Check formatting",
     "Lint",
     "Compile",
-    "firebase",
+    "Deploy",
   ]
 }
 
