@@ -1,6 +1,11 @@
 workflow "Project build" {
   on = "push"
-  resolves = ["Build", "Check formatting", "Lint", "Compile"]
+  resolves = [
+    "Check formatting",
+    "Lint",
+    "Compile",
+    "firebase",
+  ]
 }
 
 action "Install" {
@@ -30,4 +35,17 @@ action "Compile" {
   uses = "actions/npm@59b64a598378f31e49cb76f27d6f3312b582f680"
   needs = ["Install"]
   args = "run compile"
+}
+
+action "Only on master" {
+  uses = "actions/bin/filter@3c0b4f0e63ea54ea5df2914b4fabf383368cd0da"
+  needs = ["Build"]
+  args = "branch master"
+}
+
+action "Deploy" {
+  uses = "w9jds/firebase-action@master"
+  needs = ["Only on master"]
+  args = "deploy --only hosting"
+  secrets = ["FIREBASE_TOKEN"]
 }
