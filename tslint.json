@@ -1,0 +1,13 @@
+{
+  "extends": ["tslint:latest", "tslint-react", "tslint-config-prettier"],
+  "rules": {
+    "quotemark": [true, "single", "jsx-double"],
+    "interface-name": [true, "never-prefix"],
+    "object-literal-sort-keys": false,
+    "jsx-no-multiline-js": false,
+    "jsx-boolean-value": false,
+    "no-implicit-dependencies": [true, "dev"],
+    "jsx-no-lambda": false,
+    "no-console": false
+  }
+}

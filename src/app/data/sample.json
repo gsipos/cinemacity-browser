@@ -1,0 +1,959 @@
+{
+  "body": {
+    "films": [
+      {
+        "id": "3164d2r",
+        "name": "Aladdin",
+        "length": 128,
+        "posterLink": "https://www.cinemacity.hu/xmedia-cw/repo/feats/posters/3164D2R-md.jpg",
+        "videoLink": "https://www.youtube.com/watch?v=QqsYjD8fNuE",
+        "link": "https://www.cinemacity.hu/films/aladdin/3164d2r",
+        "weight": 0,
+        "releaseYear": "2019",
+        "attributeIds": [
+          "12-plus",
+          "2d",
+          "adventure",
+          "dubbed",
+          "dubbed-lang-hu",
+          "family",
+          "vip"
+        ]
+      },
+      {
+        "id": "3513d2r",
+        "name": "Annabelle 3",
+        "length": 106,
+        "posterLink": "https://www.cinemacity.hu/xmedia-cw/repo/feats/posters/3513D2R-md.jpg",
+        "videoLink": "https://www.youtube.com/watch?v=k199Fh5mdN8",
+        "link": "https://www.cinemacity.hu/films/annabelle-3/3513d2r",
+        "weight": 0,
+        "releaseYear": "2019",
+        "attributeIds": [
+          "16-plus",
+          "2d",
+          "dolby-atmos",
+          "dubbed",
+          "dubbed-lang-hu",
+          "horror",
+          "original",
+          "original-lang-en-us",
+          "screenx",
+          "vip"
+        ]
+      },
+      {
+        "id": "3450d2r",
+        "name": "Átkozottul veszett, sokkolóan gonosz és hitvány",
+        "length": 110,
+        "posterLink": "https://www.cinemacity.hu/xmedia-cw/repo/feats/posters/3450D2R-md.jpg",
+        "videoLink": "https://www.youtube.com/watch?v=2F_3axA11zI",
+        "link": "https://www.cinemacity.hu/films/atkozottul-veszett-sokkoloan-gonosz-es-hitvany/3450d2r",
+        "weight": 0,
+        "releaseYear": "2019",
+        "attributeIds": [
+          "16-plus",
+          "2d",
+          "biography",
+          "crime",
+          "drama",
+          "dubbed",
+          "dubbed-lang-hu",
+          "first-subbed-lang-hu",
+          "original-lang-en-us",
+          "subbed"
+        ]
+      },
+      {
+        "id": "3270d2r",
+        "name": "Bosszúállók: Végjáték",
+        "length": 182,
+        "posterLink": "https://www.cinemacity.hu/xmedia-cw/repo/feats/posters/3270D2R-md.jpg",
+        "videoLink": "https://www.youtube.com/watch?v=GCjYXXf3-9E",
+        "link": "https://www.cinemacity.hu/films/bosszuallok-vegjatek/3270d2r",
+        "weight": 0,
+        "releaseYear": "2019",
+        "attributeIds": [
+          "12-plus",
+          "3d",
+          "action",
+          "adventure",
+          "dubbed",
+          "dubbed-lang-hu",
+          "fantasy",
+          "imax"
+        ]
+      },
+      {
+        "id": "2875d2r",
+        "name": "Csaló csajok",
+        "length": 94,
+        "posterLink": "https://www.cinemacity.hu/xmedia-cw/repo/feats/posters/2875D2R-md.jpg",
+        "videoLink": "https://www.youtube.com/watch?v=RbS1UxnZOFs",
+        "link": "https://www.cinemacity.hu/films/csalo-csajok/2875d2r",
+        "weight": 0,
+        "releaseYear": null,
+        "attributeIds": ["12-plus", "2d", "comedy", "dubbed", "dubbed-lang-hu"]
+      },
+      {
+        "id": "3460d2r",
+        "name": "Csekély esély",
+        "length": 125,
+        "posterLink": "https://www.cinemacity.hu/xmedia-cw/repo/feats/posters/3460D2R-md.jpg",
+        "videoLink": "https://www.youtube.com/watch?v=DqgkoZYhjG8",
+        "link": "https://www.cinemacity.hu/films/csekely-esely/3460d2r",
+        "weight": 0,
+        "releaseYear": "2019",
+        "attributeIds": [
+          "16-plus",
+          "2d",
+          "comedy",
+          "dubbed",
+          "dubbed-lang-hu",
+          "vip"
+        ]
+      },
+      {
+        "id": "3029d2r",
+        "name": "Godzilla II. - A szörnyek királya",
+        "length": 132,
+        "posterLink": "https://www.cinemacity.hu/xmedia-cw/repo/feats/posters/3029D2R-md.jpg",
+        "videoLink": "https://www.youtube.com/watch?v=0GQquylY58A",
+        "link": "https://www.cinemacity.hu/films/godzilla-ii-a-szornyek-kiralya/3029d2r",
+        "weight": 0,
+        "releaseYear": "2019",
+        "attributeIds": [
+          "16-plus",
+          "3d",
+          "action",
+          "adventure",
+          "dubbed",
+          "dubbed-lang-hu",
+          "fantasy"
+        ]
+      },
+      {
+        "id": "3410d2r",
+        "name": "Gyerekjáték",
+        "length": 90,
+        "posterLink": "https://www.cinemacity.hu/xmedia-cw/repo/feats/posters/3410D2R-md.jpg",
+        "videoLink": "https://www.youtube.com/watch?v=LQJnu4fmDAY",
+        "link": "https://www.cinemacity.hu/films/gyerekjatek/3410d2r",
+        "weight": 0,
+        "releaseYear": "2019",
+        "attributeIds": ["18-plus", "2d", "dubbed", "dubbed-lang-hu", "horror"]
+      },
+      {
+        "id": "3347d2r",
+        "name": "John Wick 3. felvonás - Parabellum",
+        "length": 131,
+        "posterLink": "https://www.cinemacity.hu/xmedia-cw/repo/feats/posters/3347D2R-md.jpg",
+        "videoLink": "https://www.youtube.com/watch?v=cT49tYIxTOY",
+        "link": "https://www.cinemacity.hu/films/john-wick-3-felvonas-parabellum/3347d2r",
+        "weight": 0,
+        "releaseYear": "2019",
+        "attributeIds": [
+          "18-plus",
+          "2d",
+          "action",
+          "dubbed",
+          "dubbed-lang-hu",
+          "thriller"
+        ]
+      },
+      {
+        "id": "3295d2r",
+        "name": "Men in Black - Sötét zsaruk a Föld körül",
+        "length": 115,
+        "posterLink": "https://www.cinemacity.hu/xmedia-cw/repo/feats/posters/3295D2R-md.jpg",
+        "videoLink": "https://www.youtube.com/watch?v=Hgogx325g_g",
+        "link": "https://www.cinemacity.hu/films/men-in-black-sotet-zsaruk-a-fold-korul/3295d2r",
+        "weight": 0,
+        "releaseYear": "2019",
+        "attributeIds": [
+          "12-plus",
+          "2d",
+          "3d",
+          "action",
+          "comedy",
+          "dubbed",
+          "dubbed-lang-hu",
+          "original",
+          "original-lang-en-us",
+          "sci-fi",
+          "vip"
+        ]
+      },
+      {
+        "id": "3117d2r",
+        "name": "Rocketman",
+        "length": 121,
+        "posterLink": "https://www.cinemacity.hu/xmedia-cw/repo/feats/posters/3117D2R-md.jpg",
+        "videoLink": "https://www.youtube.com/watch?v=4jUCe4yXX8Q",
+        "link": "https://www.cinemacity.hu/films/rocketman/3117d2r",
+        "weight": 0,
+        "releaseYear": "2019",
+        "attributeIds": [
+          "16-plus",
+          "2d",
+          "biography",
+          "drama",
+          "dubbed",
+          "dubbed-lang-hu",
+          "fantasy",
+          "music"
+        ]
+      },
+      {
+        "id": "3249d2r",
+        "name": "Toy Story 4",
+        "length": 100,
+        "posterLink": "https://www.cinemacity.hu/xmedia-cw/repo/feats/posters/3249D2R-md.jpg",
+        "videoLink": "https://www.youtube.com/watch?v=a0ZFCxUicU4",
+        "link": "https://www.cinemacity.hu/films/toy-story-4/3249d2r",
+        "weight": 0,
+        "releaseYear": "2019",
+        "attributeIds": [
+          "2d",
+          "3d",
+          "6-plus",
+          "adventure",
+          "animation",
+          "dubbed",
+          "dubbed-lang-hu",
+          "family"
+        ]
+      },
+      {
+        "id": "3126d2r",
+        "name": "X-Men: Sötét Főnix",
+        "length": 114,
+        "posterLink": "https://www.cinemacity.hu/xmedia-cw/repo/feats/posters/3126D2R-md.jpg",
+        "videoLink": "https://www.youtube.com/watch?v=o8EabKBvuqM",
+        "link": "https://www.cinemacity.hu/films/x-men-sotet-fonix/3126d2r",
+        "weight": 0,
+        "releaseYear": "2018",
+        "attributeIds": [
+          "16-plus",
+          "2d",
+          "action",
+          "dubbed",
+          "dubbed-lang-hu",
+          "first-subbed-lang-hu",
+          "original-lang-en-us",
+          "sci-fi",
+          "subbed"
+        ]
+      },
+      {
+        "id": "3406d2r",
+        "name": "Yesterday",
+        "length": 117,
+        "posterLink": "https://www.cinemacity.hu/xmedia-cw/repo/feats/posters/3406D2R-md.jpg",
+        "videoLink": "https://www.youtube.com/watch?v=82vSatlsuv8",
+        "link": "https://www.cinemacity.hu/films/yesterday/3406d2r",
+        "weight": 0,
+        "releaseYear": "2019",
+        "attributeIds": [
+          "12-plus",
+          "2d",
+          "comedy",
+          "drama",
+          "dubbed",
+          "dubbed-lang-hu",
+          "first-subbed-lang-hu",
+          "music",
+          "original-lang-en-us",
+          "subbed",
+          "vip"
+        ]
+      }
+    ],
+    "events": [
+      {
+        "id": "525033",
+        "filmId": "3295d2r",
+        "cinemaId": "1132",
+        "businessDay": "2019-07-02",
+        "eventDateTime": "2019-07-02T17:40:00",
+        "attributeIds": [
+          "12-plus",
+          "3d",
+          "action",
+          "comedy",
+          "dubbed",
+          "dubbed-lang-hu",
+          "sci-fi"
+        ],
+        "bookingLink": "https://www.cinemacity.hu/booking?presentationCode=525033&cinemaId=1132&lang=hu-HU",
+        "soldOut": false
+      },
+      {
+        "id": "525513",
+        "filmId": "3126d2r",
+        "cinemaId": "1132",
+        "businessDay": "2019-07-02",
+        "eventDateTime": "2019-07-02T18:00:00",
+        "attributeIds": [
+          "16-plus",
+          "2d",
+          "action",
+          "dubbed",
+          "dubbed-lang-hu",
+          "sci-fi"
+        ],
+        "bookingLink": "https://www.cinemacity.hu/booking?presentationCode=525513&cinemaId=1132&lang=hu-HU",
+        "soldOut": false
+      },
+      {
+        "id": "524832",
+        "filmId": "3513d2r",
+        "cinemaId": "1132",
+        "businessDay": "2019-07-02",
+        "eventDateTime": "2019-07-02T18:00:00",
+        "attributeIds": [
+          "16-plus",
+          "2d",
+          "dubbed",
+          "dubbed-lang-hu",
+          "horror",
+          "vip"
+        ],
+        "bookingLink": "https://www.cinemacity.hu/booking?presentationCode=524832&cinemaId=1132&lang=hu-HU",
+        "soldOut": false
+      },
+      {
+        "id": "525263",
+        "filmId": "3513d2r",
+        "cinemaId": "1132",
+        "businessDay": "2019-07-02",
+        "eventDateTime": "2019-07-02T18:00:00",
+        "attributeIds": [
+          "16-plus",
+          "2d",
+          "dolby-atmos",
+          "dubbed",
+          "dubbed-lang-hu",
+          "horror"
+        ],
+        "bookingLink": "https://www.cinemacity.hu/booking?presentationCode=525263&cinemaId=1132&lang=hu-HU",
+        "soldOut": false
+      },
+      {
+        "id": "525139",
+        "filmId": "3249d2r",
+        "cinemaId": "1132",
+        "businessDay": "2019-07-02",
+        "eventDateTime": "2019-07-02T18:10:00",
+        "attributeIds": [
+          "3d",
+          "6-plus",
+          "adventure",
+          "animation",
+          "dubbed",
+          "dubbed-lang-hu",
+          "family"
+        ],
+        "bookingLink": "https://www.cinemacity.hu/booking?presentationCode=525139&cinemaId=1132&lang=hu-HU",
+        "soldOut": false
+      },
+      {
+        "id": "525070",
+        "filmId": "3460d2r",
+        "cinemaId": "1132",
+        "businessDay": "2019-07-02",
+        "eventDateTime": "2019-07-02T18:10:00",
+        "attributeIds": ["16-plus", "2d", "comedy", "dubbed", "dubbed-lang-hu"],
+        "bookingLink": "https://www.cinemacity.hu/booking?presentationCode=525070&cinemaId=1132&lang=hu-HU",
+        "soldOut": false
+      },
+      {
+        "id": "525297",
+        "filmId": "3450d2r",
+        "cinemaId": "1132",
+        "businessDay": "2019-07-02",
+        "eventDateTime": "2019-07-02T18:15:00",
+        "attributeIds": [
+          "16-plus",
+          "2d",
+          "biography",
+          "crime",
+          "drama",
+          "dubbed",
+          "dubbed-lang-hu"
+        ],
+        "bookingLink": "https://www.cinemacity.hu/booking?presentationCode=525297&cinemaId=1132&lang=hu-HU",
+        "soldOut": false
+      },
+      {
+        "id": "524887",
+        "filmId": "3460d2r",
+        "cinemaId": "1132",
+        "businessDay": "2019-07-02",
+        "eventDateTime": "2019-07-02T18:30:00",
+        "attributeIds": [
+          "16-plus",
+          "2d",
+          "comedy",
+          "dubbed",
+          "dubbed-lang-hu",
+          "vip"
+        ],
+        "bookingLink": "https://www.cinemacity.hu/booking?presentationCode=524887&cinemaId=1132&lang=hu-HU",
+        "soldOut": false
+      },
+      {
+        "id": "525333",
+        "filmId": "3164d2r",
+        "cinemaId": "1132",
+        "businessDay": "2019-07-02",
+        "eventDateTime": "2019-07-02T18:40:00",
+        "attributeIds": [
+          "12-plus",
+          "2d",
+          "adventure",
+          "dubbed",
+          "dubbed-lang-hu",
+          "family"
+        ],
+        "bookingLink": "https://www.cinemacity.hu/booking?presentationCode=525333&cinemaId=1132&lang=hu-HU",
+        "soldOut": false
+      },
+      {
+        "id": "525442",
+        "filmId": "3410d2r",
+        "cinemaId": "1132",
+        "businessDay": "2019-07-02",
+        "eventDateTime": "2019-07-02T18:45:00",
+        "attributeIds": ["18-plus", "2d", "dubbed", "dubbed-lang-hu", "horror"],
+        "bookingLink": "https://www.cinemacity.hu/booking?presentationCode=525442&cinemaId=1132&lang=hu-HU",
+        "soldOut": false
+      },
+      {
+        "id": "525181",
+        "filmId": "2875d2r",
+        "cinemaId": "1132",
+        "businessDay": "2019-07-02",
+        "eventDateTime": "2019-07-02T19:00:00",
+        "attributeIds": ["12-plus", "2d", "comedy", "dubbed", "dubbed-lang-hu"],
+        "bookingLink": "https://www.cinemacity.hu/booking?presentationCode=525181&cinemaId=1132&lang=hu-HU",
+        "soldOut": false
+      },
+      {
+        "id": "524920",
+        "filmId": "3164d2r",
+        "cinemaId": "1132",
+        "businessDay": "2019-07-02",
+        "eventDateTime": "2019-07-02T19:00:00",
+        "attributeIds": [
+          "12-plus",
+          "2d",
+          "adventure",
+          "dubbed",
+          "dubbed-lang-hu",
+          "family",
+          "vip"
+        ],
+        "bookingLink": "https://www.cinemacity.hu/booking?presentationCode=524920&cinemaId=1132&lang=hu-HU",
+        "soldOut": false
+      },
+      {
+        "id": "524993",
+        "filmId": "3249d2r",
+        "cinemaId": "1132",
+        "businessDay": "2019-07-02",
+        "eventDateTime": "2019-07-02T19:20:00",
+        "attributeIds": [
+          "2d",
+          "6-plus",
+          "adventure",
+          "animation",
+          "dubbed",
+          "dubbed-lang-hu",
+          "family"
+        ],
+        "bookingLink": "https://www.cinemacity.hu/booking?presentationCode=524993&cinemaId=1132&lang=hu-HU",
+        "soldOut": false
+      },
+      {
+        "id": "525358",
+        "filmId": "3270d2r",
+        "cinemaId": "1132",
+        "businessDay": "2019-07-02",
+        "eventDateTime": "2019-07-02T19:30:00",
+        "attributeIds": [
+          "12-plus",
+          "3d",
+          "action",
+          "adventure",
+          "dubbed",
+          "dubbed-lang-hu",
+          "fantasy"
+        ],
+        "bookingLink": "https://www.cinemacity.hu/booking?presentationCode=525358&cinemaId=1132&lang=hu-HU",
+        "soldOut": false
+      },
+      {
+        "id": "524854",
+        "filmId": "3295d2r",
+        "cinemaId": "1132",
+        "businessDay": "2019-07-02",
+        "eventDateTime": "2019-07-02T19:30:00",
+        "attributeIds": [
+          "12-plus",
+          "2d",
+          "action",
+          "comedy",
+          "dubbed",
+          "dubbed-lang-hu",
+          "sci-fi",
+          "vip"
+        ],
+        "bookingLink": "https://www.cinemacity.hu/booking?presentationCode=524854&cinemaId=1132&lang=hu-HU",
+        "soldOut": false
+      },
+      {
+        "id": "524952",
+        "filmId": "3347d2r",
+        "cinemaId": "1132",
+        "businessDay": "2019-07-02",
+        "eventDateTime": "2019-07-02T19:30:00",
+        "attributeIds": [
+          "18-plus",
+          "2d",
+          "action",
+          "dubbed",
+          "dubbed-lang-hu",
+          "thriller"
+        ],
+        "bookingLink": "https://www.cinemacity.hu/booking?presentationCode=524952&cinemaId=1132&lang=hu-HU",
+        "soldOut": false
+      },
+      {
+        "id": "525104",
+        "filmId": "3406d2r",
+        "cinemaId": "1132",
+        "businessDay": "2019-07-02",
+        "eventDateTime": "2019-07-02T19:45:00",
+        "attributeIds": [
+          "12-plus",
+          "2d",
+          "comedy",
+          "drama",
+          "dubbed",
+          "dubbed-lang-hu",
+          "music"
+        ],
+        "bookingLink": "https://www.cinemacity.hu/booking?presentationCode=525104&cinemaId=1132&lang=hu-HU",
+        "soldOut": false
+      },
+      {
+        "id": "525222",
+        "filmId": "3117d2r",
+        "cinemaId": "1132",
+        "businessDay": "2019-07-02",
+        "eventDateTime": "2019-07-02T20:00:00",
+        "attributeIds": [
+          "16-plus",
+          "2d",
+          "biography",
+          "drama",
+          "dubbed",
+          "dubbed-lang-hu",
+          "fantasy",
+          "music"
+        ],
+        "bookingLink": "https://www.cinemacity.hu/booking?presentationCode=525222&cinemaId=1132&lang=hu-HU",
+        "soldOut": false
+      },
+      {
+        "id": "525034",
+        "filmId": "3295d2r",
+        "cinemaId": "1132",
+        "businessDay": "2019-07-02",
+        "eventDateTime": "2019-07-02T20:00:00",
+        "attributeIds": [
+          "12-plus",
+          "2d",
+          "action",
+          "comedy",
+          "dubbed",
+          "dubbed-lang-hu",
+          "sci-fi"
+        ],
+        "bookingLink": "https://www.cinemacity.hu/booking?presentationCode=525034&cinemaId=1132&lang=hu-HU",
+        "soldOut": false
+      },
+      {
+        "id": "524878",
+        "filmId": "3406d2r",
+        "cinemaId": "1132",
+        "businessDay": "2019-07-02",
+        "eventDateTime": "2019-07-02T20:00:00",
+        "attributeIds": [
+          "12-plus",
+          "2d",
+          "comedy",
+          "drama",
+          "dubbed",
+          "dubbed-lang-hu",
+          "music",
+          "vip"
+        ],
+        "bookingLink": "https://www.cinemacity.hu/booking?presentationCode=524878&cinemaId=1132&lang=hu-HU",
+        "soldOut": false
+      },
+      {
+        "id": "525140",
+        "filmId": "3029d2r",
+        "cinemaId": "1132",
+        "businessDay": "2019-07-02",
+        "eventDateTime": "2019-07-02T20:15:00",
+        "attributeIds": [
+          "16-plus",
+          "3d",
+          "action",
+          "adventure",
+          "dubbed",
+          "dubbed-lang-hu",
+          "fantasy"
+        ],
+        "bookingLink": "https://www.cinemacity.hu/booking?presentationCode=525140&cinemaId=1132&lang=hu-HU",
+        "soldOut": false
+      },
+      {
+        "id": "525264",
+        "filmId": "3513d2r",
+        "cinemaId": "1132",
+        "businessDay": "2019-07-02",
+        "eventDateTime": "2019-07-02T20:15:00",
+        "attributeIds": [
+          "16-plus",
+          "2d",
+          "dolby-atmos",
+          "dubbed",
+          "dubbed-lang-hu",
+          "horror"
+        ],
+        "bookingLink": "https://www.cinemacity.hu/booking?presentationCode=525264&cinemaId=1132&lang=hu-HU",
+        "soldOut": false
+      },
+      {
+        "id": "525514",
+        "filmId": "3126d2r",
+        "cinemaId": "1132",
+        "businessDay": "2019-07-02",
+        "eventDateTime": "2019-07-02T20:30:00",
+        "attributeIds": [
+          "16-plus",
+          "2d",
+          "action",
+          "first-subbed-lang-hu",
+          "original-lang-en-us",
+          "sci-fi",
+          "subbed"
+        ],
+        "bookingLink": "https://www.cinemacity.hu/booking?presentationCode=525514&cinemaId=1132&lang=hu-HU",
+        "soldOut": false
+      },
+      {
+        "id": "525298",
+        "filmId": "3450d2r",
+        "cinemaId": "1132",
+        "businessDay": "2019-07-02",
+        "eventDateTime": "2019-07-02T20:30:00",
+        "attributeIds": [
+          "16-plus",
+          "2d",
+          "biography",
+          "crime",
+          "drama",
+          "first-subbed-lang-hu",
+          "original-lang-en-us",
+          "subbed"
+        ],
+        "bookingLink": "https://www.cinemacity.hu/booking?presentationCode=525298&cinemaId=1132&lang=hu-HU",
+        "soldOut": false
+      },
+      {
+        "id": "524833",
+        "filmId": "3513d2r",
+        "cinemaId": "1132",
+        "businessDay": "2019-07-02",
+        "eventDateTime": "2019-07-02T20:30:00",
+        "attributeIds": [
+          "16-plus",
+          "2d",
+          "dubbed",
+          "dubbed-lang-hu",
+          "horror",
+          "vip"
+        ],
+        "bookingLink": "https://www.cinemacity.hu/booking?presentationCode=524833&cinemaId=1132&lang=hu-HU",
+        "soldOut": false
+      },
+      {
+        "id": "525443",
+        "filmId": "3410d2r",
+        "cinemaId": "1132",
+        "businessDay": "2019-07-02",
+        "eventDateTime": "2019-07-02T20:45:00",
+        "attributeIds": ["18-plus", "2d", "dubbed", "dubbed-lang-hu", "horror"],
+        "bookingLink": "https://www.cinemacity.hu/booking?presentationCode=525443&cinemaId=1132&lang=hu-HU",
+        "soldOut": false
+      },
+      {
+        "id": "525071",
+        "filmId": "3460d2r",
+        "cinemaId": "1132",
+        "businessDay": "2019-07-02",
+        "eventDateTime": "2019-07-02T20:45:00",
+        "attributeIds": ["16-plus", "2d", "comedy", "dubbed", "dubbed-lang-hu"],
+        "bookingLink": "https://www.cinemacity.hu/booking?presentationCode=525071&cinemaId=1132&lang=hu-HU",
+        "soldOut": false
+      },
+      {
+        "id": "525182",
+        "filmId": "2875d2r",
+        "cinemaId": "1132",
+        "businessDay": "2019-07-02",
+        "eventDateTime": "2019-07-02T21:00:00",
+        "attributeIds": ["12-plus", "2d", "comedy", "dubbed", "dubbed-lang-hu"],
+        "bookingLink": "https://www.cinemacity.hu/booking?presentationCode=525182&cinemaId=1132&lang=hu-HU",
+        "soldOut": false
+      },
+      {
+        "id": "524888",
+        "filmId": "3460d2r",
+        "cinemaId": "1132",
+        "businessDay": "2019-07-02",
+        "eventDateTime": "2019-07-02T21:00:00",
+        "attributeIds": [
+          "16-plus",
+          "2d",
+          "comedy",
+          "dubbed",
+          "dubbed-lang-hu",
+          "vip"
+        ],
+        "bookingLink": "https://www.cinemacity.hu/booking?presentationCode=524888&cinemaId=1132&lang=hu-HU",
+        "soldOut": false
+      },
+      {
+        "id": "525479",
+        "filmId": "3513d2r",
+        "cinemaId": "1132",
+        "businessDay": "2019-07-02",
+        "eventDateTime": "2019-07-02T21:00:00",
+        "attributeIds": [
+          "16-plus",
+          "2d",
+          "horror",
+          "original",
+          "original-lang-en-us"
+        ],
+        "bookingLink": "https://www.cinemacity.hu/booking?presentationCode=525479&cinemaId=1132&lang=hu-HU",
+        "soldOut": false
+      },
+      {
+        "id": "525334",
+        "filmId": "3164d2r",
+        "cinemaId": "1132",
+        "businessDay": "2019-07-02",
+        "eventDateTime": "2019-07-02T21:20:00",
+        "attributeIds": [
+          "12-plus",
+          "2d",
+          "adventure",
+          "dubbed",
+          "dubbed-lang-hu",
+          "family"
+        ],
+        "bookingLink": "https://www.cinemacity.hu/booking?presentationCode=525334&cinemaId=1132&lang=hu-HU",
+        "soldOut": false
+      },
+      {
+        "id": "524921",
+        "filmId": "3164d2r",
+        "cinemaId": "1132",
+        "businessDay": "2019-07-02",
+        "eventDateTime": "2019-07-02T21:30:00",
+        "attributeIds": [
+          "12-plus",
+          "2d",
+          "adventure",
+          "dubbed",
+          "dubbed-lang-hu",
+          "family",
+          "vip"
+        ],
+        "bookingLink": "https://www.cinemacity.hu/booking?presentationCode=524921&cinemaId=1132&lang=hu-HU",
+        "soldOut": false
+      },
+      {
+        "id": "524994",
+        "filmId": "3406d2r",
+        "cinemaId": "1132",
+        "businessDay": "2019-07-02",
+        "eventDateTime": "2019-07-02T21:30:00",
+        "attributeIds": [
+          "12-plus",
+          "2d",
+          "comedy",
+          "drama",
+          "first-subbed-lang-hu",
+          "music",
+          "original-lang-en-us",
+          "subbed"
+        ],
+        "bookingLink": "https://www.cinemacity.hu/booking?presentationCode=524994&cinemaId=1132&lang=hu-HU",
+        "soldOut": false
+      },
+      {
+        "id": "525583",
+        "filmId": "3270d2r",
+        "cinemaId": "1132",
+        "businessDay": "2019-07-02",
+        "eventDateTime": "2019-07-02T21:40:00",
+        "attributeIds": [
+          "12-plus",
+          "3d",
+          "action",
+          "adventure",
+          "dubbed",
+          "dubbed-lang-hu",
+          "fantasy",
+          "imax"
+        ],
+        "bookingLink": "https://www.cinemacity.hu/booking?presentationCode=525583&cinemaId=1132&lang=hu-HU",
+        "soldOut": false
+      },
+      {
+        "id": "525555",
+        "filmId": "3513d2r",
+        "cinemaId": "1132",
+        "businessDay": "2019-07-02",
+        "eventDateTime": "2019-07-02T21:50:00",
+        "attributeIds": [
+          "16-plus",
+          "2d",
+          "dubbed",
+          "dubbed-lang-hu",
+          "horror",
+          "screenx"
+        ],
+        "bookingLink": "https://www.cinemacity.hu/booking?presentationCode=525555&cinemaId=1132&lang=hu-HU",
+        "soldOut": false
+      },
+      {
+        "id": "524855",
+        "filmId": "3295d2r",
+        "cinemaId": "1132",
+        "businessDay": "2019-07-02",
+        "eventDateTime": "2019-07-02T22:00:00",
+        "attributeIds": [
+          "12-plus",
+          "2d",
+          "action",
+          "comedy",
+          "dubbed",
+          "dubbed-lang-hu",
+          "sci-fi",
+          "vip"
+        ],
+        "bookingLink": "https://www.cinemacity.hu/booking?presentationCode=524855&cinemaId=1132&lang=hu-HU",
+        "soldOut": false
+      },
+      {
+        "id": "524953",
+        "filmId": "3410d2r",
+        "cinemaId": "1132",
+        "businessDay": "2019-07-02",
+        "eventDateTime": "2019-07-02T22:10:00",
+        "attributeIds": ["18-plus", "2d", "dubbed", "dubbed-lang-hu", "horror"],
+        "bookingLink": "https://www.cinemacity.hu/booking?presentationCode=524953&cinemaId=1132&lang=hu-HU",
+        "soldOut": false
+      },
+      {
+        "id": "525105",
+        "filmId": "3406d2r",
+        "cinemaId": "1132",
+        "businessDay": "2019-07-02",
+        "eventDateTime": "2019-07-02T22:15:00",
+        "attributeIds": [
+          "12-plus",
+          "2d",
+          "comedy",
+          "drama",
+          "dubbed",
+          "dubbed-lang-hu",
+          "music"
+        ],
+        "bookingLink": "https://www.cinemacity.hu/booking?presentationCode=525105&cinemaId=1132&lang=hu-HU",
+        "soldOut": false
+      },
+      {
+        "id": "525035",
+        "filmId": "3295d2r",
+        "cinemaId": "1132",
+        "businessDay": "2019-07-02",
+        "eventDateTime": "2019-07-02T22:20:00",
+        "attributeIds": [
+          "12-plus",
+          "2d",
+          "action",
+          "comedy",
+          "original",
+          "original-lang-en-us",
+          "sci-fi"
+        ],
+        "bookingLink": "https://www.cinemacity.hu/booking?presentationCode=525035&cinemaId=1132&lang=hu-HU",
+        "soldOut": false
+      },
+      {
+        "id": "525223",
+        "filmId": "3460d2r",
+        "cinemaId": "1132",
+        "businessDay": "2019-07-02",
+        "eventDateTime": "2019-07-02T22:30:00",
+        "attributeIds": ["16-plus", "2d", "comedy", "dubbed", "dubbed-lang-hu"],
+        "bookingLink": "https://www.cinemacity.hu/booking?presentationCode=525223&cinemaId=1132&lang=hu-HU",
+        "soldOut": false
+      },
+      {
+        "id": "524879",
+        "filmId": "3513d2r",
+        "cinemaId": "1132",
+        "businessDay": "2019-07-02",
+        "eventDateTime": "2019-07-02T22:30:00",
+        "attributeIds": [
+          "16-plus",
+          "2d",
+          "dubbed",
+          "dubbed-lang-hu",
+          "horror",
+          "vip"
+        ],
+        "bookingLink": "https://www.cinemacity.hu/booking?presentationCode=524879&cinemaId=1132&lang=hu-HU",
+        "soldOut": false
+      },
+      {
+        "id": "525265",
+        "filmId": "3513d2r",
+        "cinemaId": "1132",
+        "businessDay": "2019-07-02",
+        "eventDateTime": "2019-07-02T22:30:00",
+        "attributeIds": [
+          "16-plus",
+          "2d",
+          "dolby-atmos",
+          "dubbed",
+          "dubbed-lang-hu",
+          "horror"
+        ],
+        "bookingLink": "https://www.cinemacity.hu/booking?presentationCode=525265&cinemaId=1132&lang=hu-HU",
+        "soldOut": false
+      }
+    ]
+  }
+}
