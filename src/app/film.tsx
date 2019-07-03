@@ -7,24 +7,24 @@ export const FilmContainer = styled.div`
   padding: 16px;
   width: 100%;
   grid-gap: 16px;
-  grid-template-columns: repeat(auto-fit, 400px);
+  grid-template-columns: repeat(auto-fit, minmax(min-content, 300px));
 `;
 
 const FilmRoot = styled.div`
   display: flex;
   flex-flow: row nowrap;
-  border: 1px solid #e7e7e7;
   &.active {
     color: #fcfcfc;
     background-color: #131313;
   }
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  cursor: pointer;
 `;
 
 const Poster = styled.img`
   width: 80px;
   height: auto;
-  margin: 4px;
+  margin-right: 8px;
 `;
 
 const Info = styled.div`
@@ -38,6 +38,7 @@ export const FilmDisplay = ({ film, active, toggle }: { film: Film; active: bool
     <Poster src={film.posterLink} />
     <Info>
       <h3>{film.name}</h3>
+      <div>{film.length} min</div>
       <a href={film.link} target="_blank">
         Cinema city link
       </a>
