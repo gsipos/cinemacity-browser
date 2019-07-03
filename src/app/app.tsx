@@ -17,6 +17,14 @@ const AppRoot = styled.div`
   }
 `;
 
+const DateGroup = styled.h2<{ idx: number }>`
+  position: sticky;
+  top: 0;
+  z-index: ${p => p.idx};
+  width: 100%;
+  background-color: #fcfcfc;
+`;
+
 const toggleValueInArray = (value: string, arr: string[]) =>
   arr.includes(value) ? arr.filter(d => d !== value) : [...arr, value];
 
@@ -57,6 +65,8 @@ export const App = () => {
     [agenda, activeAttributes, activeFilms, activeDates]
   );
 
+  const eventsOfDate = (date: string) => activeEvents.filter(e => e.businessDay === date);
+
   const getFilm = (id: string) => agenda.films.find(f => f.id === id);
 
   const uniqueAttributes = useMemo(() => getUniqueAttributes(agenda), [agenda]);
@@ -82,16 +92,22 @@ export const App = () => {
         ))}
       </FilmContainer>
 
-      <EventContainer>
-        {activeEvents.map(event => (
-          <Event
-            event={event}
-            filmName={getFilm(event.filmId)!.name}
-            poster={getFilm(event.filmId)!.posterLink}
-            key={event.id}
-          />
-        ))}
-      </EventContainer>
+      {(!!activeDates.length ? activeDates : dates).map((date, idx) => (
+        <>
+          <DateGroup idx={idx}>{date}</DateGroup>
+          <EventContainer>
+            {eventsOfDate(date).map(event => (
+              <Event
+                event={event}
+                filmName={getFilm(event.filmId)!.name}
+                poster={getFilm(event.filmId)!.posterLink}
+                attributes={activeAttributes}
+                key={event.id}
+              />
+            ))}
+          </EventContainer>
+        </>
+      ))}
     </AppRoot>
   );
 };
