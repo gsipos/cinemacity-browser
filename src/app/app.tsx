@@ -10,6 +10,7 @@ const AppRoot = styled.div`
   padding: 32px;
   color: #131313;
   background-color: #fcfcfc;
+  font-family: Arial, Helvetica, sans-serif;
 
   & div {
     box-sizing: border-box;
@@ -56,7 +57,7 @@ export const App = () => {
     [agenda, activeAttributes, activeFilms, activeDates]
   );
 
-  const getFilm = (id: string) => agenda.films.find(f => f.id === id)!.name;
+  const getFilm = (id: string) => agenda.films.find(f => f.id === id);
 
   const uniqueAttributes = useMemo(() => getUniqueAttributes(agenda), [agenda]);
   return (
@@ -83,7 +84,12 @@ export const App = () => {
 
       <EventContainer>
         {activeEvents.map(event => (
-          <Event event={event} filmName={getFilm(event.filmId)} key={event.id} />
+          <Event
+            event={event}
+            filmName={getFilm(event.filmId)!.name}
+            poster={getFilm(event.filmId)!.posterLink}
+            key={event.id}
+          />
         ))}
       </EventContainer>
     </AppRoot>
