@@ -10,10 +10,17 @@ const AppRoot = styled.div`
   padding: 32px;
   color: #131313;
   background-color: #fcfcfc;
-
   & div {
     box-sizing: border-box;
   }
+`
+
+const DateGroup = styled.h2<{ idx: number }>`
+  position: sticky;
+  top: 0;
+  z-index: ${(p) => p.idx};
+  width: 100%;
+  background-color: #fcfcfc;
 `
 
 const toggleValueInArray = (value: string, arr: string[]) =>
@@ -52,7 +59,9 @@ export const App = () => {
     [agenda, activeAttributes, activeFilms, activeDates]
   )
 
-  const getFilm = (id: string) => agenda.films.find((f) => f.id === id)!.name
+  const eventsOfDate = (date: string) => activeEvents.filter((e) => e.businessDay === date)
+
+  const getFilm = (id: string) => agenda.films.find((f) => f.id === id)
 
   const uniqueAttributes = useMemo(() => getUniqueAttributes(agenda), [agenda])
   return (
@@ -78,8 +87,14 @@ export const App = () => {
       </FilmContainer>
 
       <EventContainer>
-        {activeEvents.map((event) => (
-          <Event event={event} filmName={getFilm(event.filmId)} key={event.id} />
+        {eventsOfDate(date).map((event) => (
+          <Event
+            event={event}
+            filmName={getFilm(event.filmId)!.name}
+            poster={getFilm(event.filmId)!.posterLink}
+            attributes={activeAttributes}
+            key={event.id}
+          />
         ))}
       </EventContainer>
     </AppRoot>

@@ -13,11 +13,12 @@ export const FilmContainer = styled.div`
 const FilmRoot = styled.div`
   display: flex;
   flex-flow: row nowrap;
-  border: 1px solid #131313;
+  border: 1px solid #e7e7e7;
   &.active {
     color: #fcfcfc;
     background-color: #131313;
   }
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 `
 
 const Poster = styled.img`
@@ -37,8 +38,12 @@ export const FilmDisplay = ({ film, active, toggle }: { film: Film; active: bool
     <Poster src={film.posterLink} />
     <Info>
       <h3>{film.name}</h3>
-      <a href={film.link}>Cinema city link</a>
-      <a href={film.videoLink}>Video link</a>
+      <a href={film.link} target="_blank">
+        Cinema city link
+      </a>
+      <a href={film.videoLink} target="_blank">
+        Video link
+      </a>
     </Info>
   </FilmRoot>
 )
