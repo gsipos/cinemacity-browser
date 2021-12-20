@@ -1,14 +1,15 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node'
-import fetch from 'node-fetch'
+import axios from 'axios'
+
+const axiosInstance = axios.create();
 
 export const agendaUrl = (date: string) =>
   `https://www.cinemacity.hu/hu/data-api-service/v1/quickbook/10102/film-events/in-cinema/1132/at-date/${date}?attr=&lang=hu_HU`
 
 export const fetchAgenda = async (date: string) => {
   try {
-    const response = await fetch(agendaUrl(date))
-    const content = await response.text()
-    return JSON.parse(content).body
+    const response = await axiosInstance.get(agendaUrl(date))
+    return response.data
   } catch (e) {
     console.error('Could not fetch agenda for ' + date, e)
     return { films: [], events: [] }
