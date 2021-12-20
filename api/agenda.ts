@@ -1,11 +1,12 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node'
+import fetch from 'node-fetch'
 
 export const agendaUrl = (date: string) =>
   `https://www.cinemacity.hu/hu/data-api-service/v1/quickbook/10102/film-events/in-cinema/1132/at-date/${date}?attr=&lang=hu_HU`
 
 export const fetchAgenda = async (date: string) => {
   try {
-    const response = await fetch(agendaUrl(date), { mode: 'cors' })
+    const response = await fetch(agendaUrl(date))
     const content = await response.text()
     return JSON.parse(content).body
   } catch (e) {
