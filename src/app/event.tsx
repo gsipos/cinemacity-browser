@@ -11,10 +11,9 @@ export const EventContainer = styled.div`
   grid-gap: 32px;
 `
 
-const EventRoot = styled.div`
+const EventRoot = styled.div<{ poster: string }>`
   display: flex;
   flex-flow: column nowrap;
-  border: 1px solid #131313;
   padding: 8px;
   align-items: center;
   background: RGBA(255, 255, 255, 0.65) url(${(p) => p.poster});
@@ -50,6 +49,8 @@ export const Event = ({
     <h3>{filmName}</h3>
     <div>{event.attributeIds.map((a) => (attributes.includes(a) ? <strong>{a} </strong> : <span>{a} </span>))}</div>
     <hr />
-    <a href={event.bookingLink}>Book ticket</a>
+    <a href={event.bookingLink} target="_blank">
+      Book ticket
+    </a>
   </EventRoot>
 )

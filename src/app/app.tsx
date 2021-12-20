@@ -10,6 +10,7 @@ const AppRoot = styled.div`
   padding: 32px;
   color: #131313;
   background-color: #fcfcfc;
+  font-family: Arial, Helvetica, sans-serif;
   & div {
     box-sizing: border-box;
   }
@@ -66,7 +67,7 @@ export const App = () => {
   const uniqueAttributes = useMemo(() => getUniqueAttributes(agenda), [agenda])
   return (
     <AppRoot>
-      <h1>Cinema City Arena Browser</h1>
+      <h1>Cinema City Browser</h1>
 
       <AttributeFilterContainer>
         {dates.map((d) => (
@@ -86,17 +87,22 @@ export const App = () => {
         ))}
       </FilmContainer>
 
-      <EventContainer>
-        {eventsOfDate(date).map((event) => (
-          <Event
-            event={event}
-            filmName={getFilm(event.filmId)!.name}
-            poster={getFilm(event.filmId)!.posterLink}
-            attributes={activeAttributes}
-            key={event.id}
-          />
-        ))}
-      </EventContainer>
+      {(!!activeDates.length ? activeDates : dates).map((date, idx) => (
+        <>
+          <DateGroup idx={idx}>{date}</DateGroup>
+          <EventContainer>
+            {eventsOfDate(date).map((event) => (
+              <Event
+                event={event}
+                filmName={getFilm(event.filmId)!.name}
+                poster={getFilm(event.filmId)!.posterLink}
+                attributes={activeAttributes}
+                key={event.id}
+              />
+            ))}
+          </EventContainer>
+        </>
+      ))}
     </AppRoot>
   )
 }
