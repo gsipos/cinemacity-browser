@@ -57,7 +57,7 @@ export const App = () => {
   const uniqueAttributes = useMemo(() => getUniqueAttributes(agenda), [agenda])
   return (
     <AppRoot>
-      <h1>Cinema City Browser</h1>
+      <h1>Cinema City Arena Browser</h1>
 
       <AttributeFilterContainer>
         {dates.map((d) => (
