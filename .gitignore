@@ -3,3 +3,6 @@ dist
 .cache
 .tmp
 .firebase
+.parcel-cache
+
+.vercel

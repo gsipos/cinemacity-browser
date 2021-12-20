@@ -1,113 +1,87 @@
-import { DateTime } from 'luxon';
-import React, { useEffect, useMemo, useState } from 'react';
-import styled from 'styled-components';
-import { AttributeFilter, AttributeFilterContainer } from './attribute-filter';
-import { Agenda, fetchAgenda, getUniqueAttributes, mergeAgenda } from './data/data';
-import { Event, EventContainer } from './event';
-import { FilmContainer, FilmDisplay } from './film';
+import { DateTime } from 'luxon'
+import React, { useEffect, useMemo, useState } from 'react'
+import styled from 'styled-components'
+import { AttributeFilter, AttributeFilterContainer } from './attribute-filter'
+import { Agenda, fetchAgenda, getUniqueAttributes, mergeAgenda } from './data/data'
+import { Event, EventContainer } from './event'
+import { FilmContainer, FilmDisplay } from './film'
 
 const AppRoot = styled.div`
   padding: 32px;
   color: #131313;
   background-color: #fcfcfc;
-  font-family: Arial, Helvetica, sans-serif;
 
   & div {
     box-sizing: border-box;
   }
-`;
-
-const DateGroup = styled.h2<{ idx: number }>`
-  position: sticky;
-  top: 0;
-  z-index: ${p => p.idx};
-  width: 100%;
-  background-color: #fcfcfc;
-`;
+`
 
 const toggleValueInArray = (value: string, arr: string[]) =>
-  arr.includes(value) ? arr.filter(d => d !== value) : [...arr, value];
+  arr.includes(value) ? arr.filter((d) => d !== value) : [...arr, value]
 
 export const App = () => {
   const dates = useMemo(() => {
-    const workingDates = [];
+    const workingDates = []
     for (let i = 0; i < 7; i++) {
-      workingDates.push(
-        DateTime.local()
-          .plus({ days: i })
-          .toFormat('yyyy-MM-dd')
-      );
+      workingDates.push(DateTime.local().plus({ days: i }).toFormat('yyyy-MM-dd'))
     }
-    return workingDates;
-  }, []);
+    return workingDates
+  }, [])
 
-  const [agenda, setAgenda] = useState<Agenda>({ films: [], events: [] });
+  const [agenda, setAgenda] = useState<Agenda>({ films: [], events: [] })
 
-  const [activeDates, setActiveDates] = useState<string[]>([]);
-  const toggleDate = (a: string) => () => setActiveDates(toggleValueInArray(a, activeDates));
+  const [activeDates, setActiveDates] = useState<string[]>([])
+  const toggleDate = (a: string) => () => setActiveDates(toggleValueInArray(a, activeDates))
 
-  const [activeAttributes, setActiveAttributes] = useState<string[]>([]);
-  const toggleAttribute = (a: string) => () => setActiveAttributes(toggleValueInArray(a, activeAttributes));
+  const [activeAttributes, setActiveAttributes] = useState<string[]>([])
+  const toggleAttribute = (a: string) => () => setActiveAttributes(toggleValueInArray(a, activeAttributes))
 
-  const [activeFilms, setActiveFilms] = useState<string[]>([]);
-  const toggleFilm = (id: string) => () => setActiveFilms(toggleValueInArray(id, activeFilms));
+  const [activeFilms, setActiveFilms] = useState<string[]>([])
+  const toggleFilm = (id: string) => () => setActiveFilms(toggleValueInArray(id, activeFilms))
 
   useEffect(() => {
-    Promise.all(dates.map(d => fetchAgenda(d))).then(agendas => setAgenda(agendas.reduce(mergeAgenda)));
-  }, []);
+    Promise.all(dates.map((d) => fetchAgenda(d))).then((agendas) => setAgenda(agendas.reduce(mergeAgenda)))
+  }, [])
 
   const activeEvents = useMemo(
     () =>
       agenda.events
-        .filter(e => (activeAttributes.length ? e.attributeIds.some(i => activeAttributes.includes(i)) : true))
-        .filter(e => (activeFilms.length ? activeFilms.includes(e.filmId) : true))
-        .filter(e => (activeDates.length ? activeDates.includes(e.businessDay) : true)),
+        .filter((e) => (activeAttributes.length ? e.attributeIds.some((i) => activeAttributes.includes(i)) : true))
+        .filter((e) => (activeFilms.length ? activeFilms.includes(e.filmId) : true))
+        .filter((e) => (activeDates.length ? activeDates.includes(e.businessDay) : true)),
     [agenda, activeAttributes, activeFilms, activeDates]
-  );
+  )
 
-  const eventsOfDate = (date: string) => activeEvents.filter(e => e.businessDay === date);
+  const getFilm = (id: string) => agenda.films.find((f) => f.id === id)!.name
 
-  const getFilm = (id: string) => agenda.films.find(f => f.id === id);
-
-  const uniqueAttributes = useMemo(() => getUniqueAttributes(agenda), [agenda]);
+  const uniqueAttributes = useMemo(() => getUniqueAttributes(agenda), [agenda])
   return (
     <AppRoot>
-      <h1>Cinema City Browser</h1>
+      <h1>Cinema City Arena Browser</h1>
 
       <AttributeFilterContainer>
-        {dates.map(d => (
+        {dates.map((d) => (
           <AttributeFilter name={d} toggle={toggleDate(d)} active={activeDates.includes(d)} key={d} />
         ))}
       </AttributeFilterContainer>
 
       <AttributeFilterContainer>
-        {uniqueAttributes.map(a => (
+        {uniqueAttributes.map((a) => (
           <AttributeFilter name={a} toggle={toggleAttribute(a)} active={activeAttributes.includes(a)} key={a} />
         ))}
       </AttributeFilterContainer>
 
       <FilmContainer>
-        {agenda.films.map(film => (
+        {agenda.films.map((film) => (
           <FilmDisplay film={film} key={film.id} active={activeFilms.includes(film.id)} toggle={toggleFilm(film.id)} />
         ))}
       </FilmContainer>
 
-      {(!!activeDates.length ? activeDates : dates).map((date, idx) => (
-        <>
-          <DateGroup idx={idx}>{date}</DateGroup>
-          <EventContainer>
-            {eventsOfDate(date).map(event => (
-              <Event
-                event={event}
-                filmName={getFilm(event.filmId)!.name}
-                poster={getFilm(event.filmId)!.posterLink}
-                attributes={activeAttributes}
-                key={event.id}
-              />
-            ))}
-          </EventContainer>
-        </>
-      ))}
+      <EventContainer>
+        {activeEvents.map((event) => (
+          <Event event={event} filmName={getFilm(event.filmId)} key={event.id} />
+        ))}
+      </EventContainer>
     </AppRoot>
-  );
-};
+  )
+}

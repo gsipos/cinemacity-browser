@@ -1,0 +1,26 @@
+name: Project Build
+
+on: [push]
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "lts/*"
+          cache: "npm"
+
+      - name: Cache dependencies
+        id: node-modules-cache
+        uses: actions/cache@v2
+        with:
+          path: ./node_modules
+          key: modules-${{ hashFiles('package-lock.json') }}
+
+      - run: cd ./node_modules || npm ci --prefer-offline --no-audit
+      - run: npm run tsc
+      - run: npm run build
+      - run: npm run prettier
