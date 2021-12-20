@@ -1,7 +1,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node'
 import axios from 'axios'
 
-const axiosInstance = axios.create();
+const axiosInstance = axios.create()
 
 export const agendaUrl = (date: string) =>
   `https://www.cinemacity.hu/hu/data-api-service/v1/quickbook/10102/film-events/in-cinema/1132/at-date/${date}?attr=&lang=hu_HU`
