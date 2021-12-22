@@ -31,22 +31,37 @@ export interface Cinema {
   imageUrl: string
   link: string
   address: string
+  latitude: number
+  longitude: number
 }
 
 export interface Cinemas {
   cinemas: Cinema[]
 }
 
-export const fetchAgenda = async (date: string) => {
+export const fetchAgenda = async (date: string, cinema: string) => {
   try {
     const url = new URL('api/agenda', window.location.href)
     url.searchParams.set('date', date)
+    url.searchParams.set('cinema', cinema)
     const response = await fetch(url.toString())
     const content = await response.text()
     return JSON.parse(content).body as Agenda
   } catch (e) {
     console.error('Could not fetch agenda for ' + date, e)
     return { films: [], events: [] }
+  }
+}
+
+export const fetchCinemas = async () => {
+  try {
+    const url = new URL('api/cinema', window.location.href)
+    const response = await fetch(url.toString())
+    const content = await response.json()
+    return content.body as Cinemas
+  } catch (e) {
+    console.error('Could not fetch cinemas', e)
+    return { cinemas: [] }
   }
 }
 

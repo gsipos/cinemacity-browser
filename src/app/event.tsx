@@ -21,7 +21,11 @@ export const Event = ({
         {filmName}
       </Typography>
       <Typography variant="body1">
-        {event.attributeIds.map((a) => (attributes.includes(a) ? <strong>{a} </strong> : <span>{a} </span>))}
+        {event.attributeIds.sort().map((a) => (
+          <Typography key={a} variant="body1" color={attributes.includes(a) ? 'primary' : 'text.primary'}>
+            {a}
+          </Typography>
+        ))}
       </Typography>
     </CardContent>
     <CardActions>

@@ -1,5 +1,3 @@
-// https://www.cinemacity.hu/hu/data-api-service/v1/quickbook/10102/cinemas/with-event/until/2022-12-22?attr=&lang=en_GB
-
 import type { VercelRequest, VercelResponse } from '@vercel/node'
 import axios from 'axios'
 import { DateTime } from 'luxon'
@@ -11,7 +9,7 @@ export default async (request: VercelRequest, response: VercelResponse) => {
   const url = `https://www.cinemacity.hu/hu/data-api-service/v1/quickbook/10102/cinemas/with-event/until/${date}?attr=&lang=hu_HU`
   let res
   try {
-    res = await axiosInstance.get(url)
+    res = (await axiosInstance.get(url)).data
   } catch (e) {
     console.error('Could not fetch cinemas ', e)
   }
