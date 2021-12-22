@@ -1,28 +1,12 @@
+import { ThemeProvider } from '@emotion/react'
+import { AppBar, Box, CssBaseline, Grid, Paper, Toolbar, Typography } from '@mui/material'
 import { DateTime } from 'luxon'
 import React, { useEffect, useMemo, useState } from 'react'
-import styled from 'styled-components'
-import { AttributeFilter, AttributeFilterContainer } from './attribute-filter'
+import { AttributeFilter } from './attribute-filter'
 import { Agenda, fetchAgenda, getUniqueAttributes, mergeAgenda } from './data/data'
-import { Event, EventContainer } from './event'
-import { FilmContainer, FilmDisplay } from './film'
-
-const AppRoot = styled.div`
-  padding: 32px;
-  color: #131313;
-  background-color: #fcfcfc;
-  font-family: Arial, Helvetica, sans-serif;
-  & div {
-    box-sizing: border-box;
-  }
-`
-
-const DateGroup = styled.h2<{ idx: number }>`
-  position: sticky;
-  top: 0;
-  z-index: ${(p) => p.idx};
-  width: 100%;
-  background-color: #fcfcfc;
-`
+import { Event } from './event'
+import { FilmDisplay } from './film'
+import { theme } from './shared/theme'
 
 const toggleValueInArray = (value: string, arr: string[]) =>
   arr.includes(value) ? arr.filter((d) => d !== value) : [...arr, value]
@@ -66,43 +50,74 @@ export const App = () => {
 
   const uniqueAttributes = useMemo(() => getUniqueAttributes(agenda), [agenda])
   return (
-    <AppRoot>
-      <h1>Cinema City Browser</h1>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <AppBar position="sticky">
+        <Toolbar variant="dense">
+          <Typography variant="h6" color="inherit" component="div">
+            Cinema City Browser
+          </Typography>
+        </Toolbar>
+      </AppBar>
+      <Box sx={{ p: 4 }}>
+        <Grid container spacing={1} sx={{ mb: 2 }}>
+          {dates.map((d) => (
+            <Grid item xs={1} key={d}>
+              <AttributeFilter name={d} toggle={toggleDate(d)} active={activeDates.includes(d)} key={d} />
+            </Grid>
+          ))}
+        </Grid>
+        <Grid container spacing={1} sx={{ my: 2 }}>
+          {uniqueAttributes.map((a) => (
+            <Grid item xs={1} key={a}>
+              <AttributeFilter name={a} toggle={toggleAttribute(a)} active={activeAttributes.includes(a)} key={a} />
+            </Grid>
+          ))}
+        </Grid>
 
-      <AttributeFilterContainer>
-        {dates.map((d) => (
-          <AttributeFilter name={d} toggle={toggleDate(d)} active={activeDates.includes(d)} key={d} />
-        ))}
-      </AttributeFilterContainer>
-
-      <AttributeFilterContainer>
-        {uniqueAttributes.map((a) => (
-          <AttributeFilter name={a} toggle={toggleAttribute(a)} active={activeAttributes.includes(a)} key={a} />
-        ))}
-      </AttributeFilterContainer>
-
-      <FilmContainer>
-        {agenda.films.map((film) => (
-          <FilmDisplay film={film} key={film.id} active={activeFilms.includes(film.id)} toggle={toggleFilm(film.id)} />
-        ))}
-      </FilmContainer>
-
-      {(!!activeDates.length ? activeDates : dates).map((date, idx) => (
-        <>
-          <DateGroup idx={idx}>{date}</DateGroup>
-          <EventContainer>
-            {eventsOfDate(date).map((event) => (
-              <Event
-                event={event}
-                filmName={getFilm(event.filmId)!.name}
-                poster={getFilm(event.filmId)!.posterLink}
-                attributes={activeAttributes}
-                key={event.id}
+        <Grid container spacing={4} sx={{ py: 4 }}>
+          {agenda.films.map((film) => (
+            <Grid item xs={2}>
+              <FilmDisplay
+                film={film}
+                key={film.id}
+                active={activeFilms.includes(film.id)}
+                toggle={toggleFilm(film.id)}
               />
-            ))}
-          </EventContainer>
-        </>
-      ))}
-    </AppRoot>
+            </Grid>
+          ))}
+        </Grid>
+
+        {(!!activeDates.length ? activeDates : dates).map((date, idx) => (
+          <>
+            <Paper
+              elevation={2}
+              sx={{
+                position: 'sticky',
+                top: '48px',
+                zIndex: idx,
+              }}
+            >
+              <Typography variant="h4" color="primary">
+                {date}
+              </Typography>
+            </Paper>
+            <Grid container spacing={2} sx={{ py: 4 }}>
+              {eventsOfDate(date).map((event) => (
+                <Grid item xs={1}>
+                  <Event
+                    event={event}
+                    filmName={getFilm(event.filmId)!.name}
+                    poster={getFilm(event.filmId)!.posterLink}
+                    attributes={activeAttributes}
+                    key={event.id}
+                  />
+                </Grid>
+              ))}
+            </Grid>
+          </>
+        ))}
+      </Box>
+    </ThemeProvider>
   )
 }

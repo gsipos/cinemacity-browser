@@ -25,6 +25,18 @@ export interface Agenda {
   events: FilmEvent[]
 }
 
+export interface Cinema {
+  id: string
+  displayName: string
+  imageUrl: string
+  link: string
+  address: string
+}
+
+export interface Cinemas {
+  cinemas: Cinema[]
+}
+
 export const fetchAgenda = async (date: string) => {
   try {
     const url = new URL('api/agenda', window.location.href)
