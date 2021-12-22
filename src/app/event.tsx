@@ -29,7 +29,7 @@ export const Event = ({
       </Typography>
     </CardContent>
     <CardActions>
-      <Button variant="text" color="primary" href={event.bookingLink}>
+      <Button variant="text" color="primary" href={event.bookingLink} target="_blank">
         BOOK TICKET
       </Button>
     </CardActions>
