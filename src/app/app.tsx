@@ -121,7 +121,7 @@ export const App = () => {
           <Grid item xs={12} sm={6} md={4}>
             <AttributeListFilter attributes={possibleOptions} icon={<Filter3 />} title="Filter C" active={optionsC} />
           </Grid>
-          <Grid item xs={12} sm={6} md={4}>
+          <Grid item xs={11}>
             <LinearProgressWithLabel
               value={(activeEvents.length / agenda.events.length) * 100}
               label={`${activeEvents.length}/${agenda.events.length} Events apply`}
