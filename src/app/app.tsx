@@ -1,4 +1,5 @@
 import { ThemeProvider } from '@emotion/react'
+import { Event as EventIcon, Filter1, Filter2, Filter3, PlaylistAdd, PlaylistRemove } from '@mui/icons-material'
 import { AppBar, Button, CssBaseline, Divider, Grid, Paper, Toolbar, Typography } from '@mui/material'
 import { DateTime } from 'luxon'
 import React, { useEffect, useMemo, useState } from 'react'
@@ -11,7 +12,6 @@ import { FilmList } from './film'
 import { LinearProgressWithLabel } from './shared/linear-progress-with-label'
 import { theme } from './shared/theme'
 import { useLocalStorage } from './utils/use-local-storage'
-import { Event as EventIcon } from '@mui/icons-material'
 
 const useCinema = () => {
   const [cinema, setCinema] = useLocalStorage('cinema.id', '1132')
@@ -97,19 +97,29 @@ export const App = () => {
             <AttributeListFilter attributes={dates} icon={<EventIcon />} title="Dates" active={activeDates} />
           </Grid>
           <Grid item xs={4}>
-            <AttributeListFilter attributes={uniqueAttributes} title="Include" active={included} />
+            <AttributeListFilter
+              attributes={uniqueAttributes}
+              icon={<PlaylistAdd />}
+              title="Include"
+              active={included}
+            />
           </Grid>
           <Grid item xs={4}>
-            <AttributeListFilter attributes={possibleExcludes} title="Exclude" active={excluded} />
+            <AttributeListFilter
+              attributes={possibleExcludes}
+              icon={<PlaylistRemove />}
+              title="Exclude"
+              active={excluded}
+            />
           </Grid>
           <Grid item xs={4}>
-            <AttributeListFilter attributes={possibleOptions} title="Filter A" active={optionsA} />
+            <AttributeListFilter attributes={possibleOptions} icon={<Filter1 />} title="Filter A" active={optionsA} />
           </Grid>
           <Grid item xs={4}>
-            <AttributeListFilter attributes={possibleOptions} title="Filter B" active={optionsB} />
+            <AttributeListFilter attributes={possibleOptions} icon={<Filter2 />} title="Filter B" active={optionsB} />
           </Grid>
           <Grid item xs={4}>
-            <AttributeListFilter attributes={possibleOptions} title="Filter C" active={optionsC} />
+            <AttributeListFilter attributes={possibleOptions} icon={<Filter3 />} title="Filter C" active={optionsC} />
           </Grid>
           <Grid item xs={11}>
             <LinearProgressWithLabel
