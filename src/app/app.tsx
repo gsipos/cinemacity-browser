@@ -89,14 +89,14 @@ export const App = () => {
           <SelectedCinema cinema={activeCinema} />
         </Grid>
 
-        <Grid item container spacing={1} xs={12} sm={6} md={7}>
+        <Grid item container spacing={1} xs={12} md={7}>
           <Grid item xs={12}>
             <Divider textAlign="left">Filter</Divider>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12} sm={6} md={4}>
             <AttributeListFilter attributes={dates} icon={<EventIcon />} title="Dates" active={activeDates} />
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12} sm={6} md={4}>
             <AttributeListFilter
               attributes={uniqueAttributes}
               icon={<PlaylistAdd />}
@@ -104,7 +104,7 @@ export const App = () => {
               active={included}
             />
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12} sm={6} md={4}>
             <AttributeListFilter
               attributes={possibleExcludes}
               icon={<PlaylistRemove />}
@@ -112,16 +112,16 @@ export const App = () => {
               active={excluded}
             />
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12} sm={6} md={4}>
             <AttributeListFilter attributes={possibleOptions} icon={<Filter1 />} title="Filter A" active={optionsA} />
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12} sm={6} md={4}>
             <AttributeListFilter attributes={possibleOptions} icon={<Filter2 />} title="Filter B" active={optionsB} />
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12} sm={6} md={4}>
             <AttributeListFilter attributes={possibleOptions} icon={<Filter3 />} title="Filter C" active={optionsC} />
           </Grid>
-          <Grid item xs={11}>
+          <Grid item xs={12} sm={6} md={4}>
             <LinearProgressWithLabel
               value={(activeEvents.length / agenda.events.length) * 100}
               label={`${activeEvents.length}/${agenda.events.length} Events apply`}
