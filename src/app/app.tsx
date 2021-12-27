@@ -1,16 +1,20 @@
 import { ThemeProvider } from '@emotion/react'
-import { AppBar, Box, CssBaseline, Divider, Grid, Paper, Toolbar, Typography } from '@mui/material'
+import { AppBar, Button, CssBaseline, Divider, Grid, Paper, Toolbar, Typography } from '@mui/material'
 import { DateTime } from 'luxon'
 import React, { useEffect, useMemo, useState } from 'react'
-import { AttributeFilter } from './attribute-filter'
+import { AttributeListFilter } from './attribute-filter'
 import { CinemaSelect, SelectedCinema } from './cinema'
 import { Agenda, Cinema, fetchAgenda, fetchCinemas, getUniqueAttributes, mergeAgenda } from './data/data'
+import { useEventFilter } from './data/use-event-filter'
 import { Event } from './event'
-import { FilmDisplay } from './film'
+import { FilmList } from './film'
+import { LinearProgressWithLabel } from './shared/linear-progress-with-label'
 import { theme } from './shared/theme'
+import { useLocalStorage } from './utils/use-local-storage'
+import { Event as EventIcon } from '@mui/icons-material'
 
 const useCinema = () => {
-  const [cinema, setCinema] = useState('1132')
+  const [cinema, setCinema] = useLocalStorage('cinema.id', '1132')
 
   const [cinemas, setCinemas] = useState<Cinema[]>([])
 
@@ -35,15 +39,6 @@ const useAgenda = (dates: string[], cinema: string) => {
   return agenda
 }
 
-const toggleValueInArray = (value: string, arr: string[]) =>
-  arr.includes(value) ? arr.filter((d) => d !== value) : [...arr, value]
-
-const useToggleList = () => {
-  const [activeItems, setActiveItems] = useState<string[]>([])
-  const toggle = (a: string) => () => setActiveItems(toggleValueInArray(a, activeItems))
-  return [activeItems, toggle] as const
-}
-
 export const App = () => {
   const dates = useMemo(() => {
     const workingDates = []
@@ -56,24 +51,26 @@ export const App = () => {
   const [cinema, setCinema, cinemas, activeCinema] = useCinema()
   const agenda = useAgenda(dates, cinema)
 
-  const [activeDates, toggleDate] = useToggleList()
-  const [activeFilms, toggleFilm] = useToggleList()
-  const [activeAttributes, toggleAttribute] = useToggleList()
+  const uniqueAttributes = useMemo(() => getUniqueAttributes(agenda), [agenda])
 
-  const activeEvents = useMemo(
-    () =>
-      agenda.events
-        .filter((e) => (activeAttributes.length ? e.attributeIds.some((i) => activeAttributes.includes(i)) : true))
-        .filter((e) => (activeFilms.length ? activeFilms.includes(e.filmId) : true))
-        .filter((e) => (activeDates.length ? activeDates.includes(e.businessDay) : true)),
-    [agenda, activeAttributes, activeFilms, activeDates]
-  )
+  const {
+    activeEvents,
+    activeDates,
+    activeFilms,
+    included,
+    excluded,
+    optionsA,
+    optionsB,
+    optionsC,
+    possibleExcludes,
+    possibleOptions,
+    clear,
+  } = useEventFilter(agenda.events, uniqueAttributes)
 
   const eventsOfDate = (date: string) => activeEvents.filter((e) => e.businessDay === date)
 
   const getFilm = (id: string) => agenda.films.find((f) => f.id === id)
 
-  const uniqueAttributes = useMemo(() => getUniqueAttributes(agenda), [agenda])
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -92,45 +89,49 @@ export const App = () => {
           <SelectedCinema cinema={activeCinema} />
         </Grid>
 
-        <Grid container spacing={1} item xs={12} sm={6} md={2}>
-          {dates.map((d) => (
-            <Grid item xs={6} md={12} key={d}>
-              <AttributeFilter name={d} toggle={toggleDate(d)} active={activeDates.includes(d)} key={d} />
-            </Grid>
-          ))}
+        <Grid item container spacing={1} xs={12} sm={6} md={7}>
+          <Grid item xs={12}>
+            <Divider textAlign="left">Filter</Divider>
+          </Grid>
+          <Grid item xs={4}>
+            <AttributeListFilter attributes={dates} icon={<EventIcon />} title="Dates" active={activeDates} />
+          </Grid>
+          <Grid item xs={4}>
+            <AttributeListFilter attributes={uniqueAttributes} title="Include" active={included} />
+          </Grid>
+          <Grid item xs={4}>
+            <AttributeListFilter attributes={possibleExcludes} title="Exclude" active={excluded} />
+          </Grid>
+          <Grid item xs={4}>
+            <AttributeListFilter attributes={possibleOptions} title="Filter A" active={optionsA} />
+          </Grid>
+          <Grid item xs={4}>
+            <AttributeListFilter attributes={possibleOptions} title="Filter B" active={optionsB} />
+          </Grid>
+          <Grid item xs={4}>
+            <AttributeListFilter attributes={possibleOptions} title="Filter C" active={optionsC} />
+          </Grid>
+          <Grid item xs={11}>
+            <LinearProgressWithLabel
+              value={(activeEvents.length / agenda.events.length) * 100}
+              label={`${activeEvents.length}/${agenda.events.length} Events apply`}
+            />
+          </Grid>
+          <Grid item xs={1}>
+            <Button variant="text" color="primary" onClick={clear}>
+              Clear
+            </Button>
+          </Grid>
         </Grid>
 
-        <Grid container spacing={1} sx={{ my: 2 }} xs={12} sm={6} md={5}>
-          {uniqueAttributes.map((a) => (
-            <Grid item key={a} xs={12} sm={6} md={4} lg={3}>
-              <AttributeFilter name={a} toggle={toggleAttribute(a)} active={activeAttributes.includes(a)} key={a} />
-            </Grid>
-          ))}
-        </Grid>
-
-        <Grid item xs={12}>
-          <Divider textAlign="left">Films</Divider>
-        </Grid>
-
-        <Grid container spacing={4} sx={{ py: 4 }}>
-          {agenda.films.map((film) => (
-            <Grid item xs={12} sm={4} md={3} lg={2}>
-              <FilmDisplay
-                film={film}
-                key={film.id}
-                active={activeFilms.includes(film.id)}
-                toggle={toggleFilm(film.id)}
-              />
-            </Grid>
-          ))}
-        </Grid>
+        <FilmList films={agenda.films} activeFilms={activeFilms} />
 
         <Grid item xs={12}>
           <Divider textAlign="left">Events</Divider>
         </Grid>
 
-        {(!!activeDates.length ? activeDates : dates).map((date, idx) => (
-          <>
+        {(!!activeDates.list.length ? activeDates.list : dates).map((date, idx) => (
+          <React.Fragment key={date}>
             <Paper
               elevation={2}
               sx={{
@@ -146,18 +147,18 @@ export const App = () => {
             </Paper>
             <Grid container spacing={2} sx={{ py: 4 }}>
               {eventsOfDate(date).map((event) => (
-                <Grid item xs={6} sm={4} md={2} lg={1}>
+                <Grid key={event.id} item xs={6} sm={4} md={2} lg={1}>
                   <Event
                     event={event}
-                    filmName={getFilm(event.filmId)!.name}
-                    poster={getFilm(event.filmId)!.posterLink}
-                    attributes={activeAttributes}
+                    filmName={getFilm(event.filmId)?.name ?? ''}
+                    poster={getFilm(event.filmId)?.posterLink ?? ''}
+                    attributes={[]}
                     key={event.id}
                   />
                 </Grid>
               ))}
             </Grid>
-          </>
+          </React.Fragment>
         ))}
       </Grid>
     </ThemeProvider>

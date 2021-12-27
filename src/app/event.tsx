@@ -1,4 +1,4 @@
-import { Button, Card, CardActions, CardContent, CardHeader, CardMedia, Typography } from '@mui/material'
+import { Box, Button, Card, CardActions, CardContent, CardHeader, CardMedia, Typography } from '@mui/material'
 import React from 'react'
 import { FilmEvent } from './data/data'
 

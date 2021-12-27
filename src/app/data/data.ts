@@ -66,9 +66,7 @@ export const fetchCinemas = async () => {
 }
 
 export const getUniqueAttributes = (agenda: Agenda) => {
-  return [
-    ...new Set([...agenda.films, ...agenda.events].map((d) => d.attributeIds).reduce((a, b) => a.concat(b), [])),
-  ].sort()
+  return [...new Set([...agenda.films, ...agenda.events].map((d) => d.attributeIds).flat())].sort()
 }
 
 export const mergeAgenda = (a: Agenda, b: Agenda) => ({

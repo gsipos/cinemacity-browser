@@ -13,6 +13,7 @@ import {
   ListItemAvatar,
   ListItemButton,
   ListItemText,
+  ListSubheader,
   Paper,
   Typography,
 } from '@mui/material'
@@ -28,7 +29,7 @@ interface Props {
 export const CinemaSelect = (props: Props) => {
   return (
     <Paper>
-      <List dense sx={{ maxHeight: '400px', overflow: 'auto' }}>
+      <List dense sx={{ maxHeight: '400px', overflow: 'auto' }} subheader={<ListSubheader>Cinemas</ListSubheader>}>
         {props.cinemas.map((cinema) => (
           <ListItem key={cinema.id}>
             <ListItemButton onClick={() => props.selectCinema(cinema.id)}>
