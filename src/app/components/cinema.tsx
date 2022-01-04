@@ -6,7 +6,6 @@ import {
   CardContent,
   CardHeader,
   CardMedia,
-  Checkbox,
   IconButton,
   List,
   ListItem,
@@ -17,22 +16,18 @@ import {
   Paper,
   Typography,
 } from '@mui/material'
-import React from 'react'
-import { Cinema } from './data/data'
+import { observer } from 'mobx-react-lite'
+import React, { useContext } from 'react'
+import { AppStoreContext } from '../context/app-context'
 
-interface Props {
-  cinema: string
-  cinemas: Cinema[]
-  selectCinema: (cinema: string) => void
-}
-
-export const CinemaSelect = (props: Props) => {
+export const CinemaSelect = observer(() => {
+  const store = useContext(AppStoreContext)
   return (
     <Paper>
       <List dense sx={{ maxHeight: '400px', overflow: 'auto' }} subheader={<ListSubheader>Cinemas</ListSubheader>}>
-        {props.cinemas.map((cinema) => (
+        {store.cinemas.map((cinema) => (
           <ListItem key={cinema.id}>
-            <ListItemButton onClick={() => props.selectCinema(cinema.id)}>
+            <ListItemButton onClick={() => store.setCinema(cinema.id)}>
               <ListItemAvatar>
                 <Avatar src={cinema.imageUrl} />
               </ListItemAvatar>
@@ -43,9 +38,11 @@ export const CinemaSelect = (props: Props) => {
       </List>
     </Paper>
   )
-}
+})
 
-export const SelectedCinema = ({ cinema }: { cinema: Cinema | undefined }) => {
+export const SelectedCinema = observer(() => {
+  const store = useContext(AppStoreContext)
+  const cinema = store.activeCinema
   if (!cinema) {
     return null
   }
@@ -71,4 +68,4 @@ export const SelectedCinema = ({ cinema }: { cinema: Cinema | undefined }) => {
       </CardActions>
     </Card>
   )
-}
+})

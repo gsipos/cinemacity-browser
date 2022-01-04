@@ -13,10 +13,12 @@ import {
   ToggleButtonGroup,
   Typography,
 } from '@mui/material'
-import React from 'react'
-import { Film } from './data/data'
-import { useLocalStorage } from './utils/use-local-storage'
-import { ToggleList } from './utils/use-toggle-list'
+import { observer } from 'mobx-react-lite'
+import React, { useContext } from 'react'
+import { AppStoreContext } from '../context/app-context'
+import { Film } from '../data/data'
+import { useLocalStorage } from '../utils/use-local-storage'
+import { ToggleList } from '../utils/use-toggle-list'
 
 export const FilmDisplay = ({
   film,
@@ -29,7 +31,7 @@ export const FilmDisplay = ({
   toggle: () => void
   displayPoster: boolean
 }) => (
-  <Card elevation={active ? 24 : 2} onClick={toggle}>
+  <Card elevation={active ? 24 : 2} onClick={toggle} sx={{ contentVisibility: 'auto' }}>
     <CardActionArea>
       <CardHeader
         title={
@@ -52,13 +54,10 @@ export const FilmDisplay = ({
   </Card>
 )
 
-interface FilmListProps {
-  films: Film[]
-  activeFilms: ToggleList
-}
-
-export const FilmList = (props: FilmListProps) => {
-  const { films, activeFilms } = props
+export const FilmList = observer(() => {
+  const store = useContext(AppStoreContext)
+  const films = store.agenda.films
+  const activeFilms = store.activeFilms
   const [displayPoster, setDisplayPoster] = useLocalStorage('film.displayPoster', true)
   const togglePoster = () => setDisplayPoster(!displayPoster)
   return (
@@ -84,7 +83,7 @@ export const FilmList = (props: FilmListProps) => {
               film={film}
               key={film.id}
               active={activeFilms.has(film.id) ?? false}
-              toggle={activeFilms.toggle(film.id)}
+              toggle={() => activeFilms.toggle(film.id)}
               displayPoster={displayPoster}
             />
           </Grid>
@@ -92,4 +91,4 @@ export const FilmList = (props: FilmListProps) => {
       </Grid>
     </>
   )
-}
+})

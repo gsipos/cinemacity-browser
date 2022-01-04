@@ -14,6 +14,16 @@ export interface ToggleListGroup {
 
 export const useToggleList = (key: string, allowed: string[] = []) => {
   const [activeItems, setActiveItems] = useLocalStorage<string[]>(key, [])
+
+  useEffect(() => {
+    if (!allowed.length) {
+      return
+    }
+    if (activeItems.some((i) => !allowed.includes(i))) {
+      setActiveItems(activeItems.filter((i) => allowed.includes(i)))
+    }
+  }, [allowed])
+
   const activeSet = useMemo(() => new Set(activeItems), [activeItems])
 
   const toggle = (a: string) => () => {
