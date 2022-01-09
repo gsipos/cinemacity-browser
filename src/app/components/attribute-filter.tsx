@@ -9,8 +9,9 @@ import {
   Typography,
 } from '@mui/material'
 import React from 'react'
-import { ToggleList } from './utils/use-toggle-list'
+import { observer } from 'mobx-react-lite'
 import FilterListIcon from '@mui/icons-material/FilterList'
+import { ToggleList } from '../data/store'
 
 interface AttributeListFilterProps {
   icon?: React.ReactNode
@@ -19,7 +20,7 @@ interface AttributeListFilterProps {
   active: ToggleList
 }
 
-export const AttributeListFilter = (props: AttributeListFilterProps) => {
+export const AttributeListFilter = observer((props: AttributeListFilterProps) => {
   const { title, attributes, active, icon } = props
 
   return (
@@ -37,7 +38,7 @@ export const AttributeListFilter = (props: AttributeListFilterProps) => {
         sx={{ maxHeight: '300px', overflow: 'auto' }}
       >
         {attributes.map((attribute) => (
-          <ListItemButton key={attribute} onClick={active.toggle(attribute)}>
+          <ListItemButton key={attribute} onClick={() => active.toggle(attribute)}>
             <ListItemIcon>
               <Checkbox edge="start" checked={active.has(attribute) ?? false} disableRipple />
             </ListItemIcon>
@@ -47,4 +48,4 @@ export const AttributeListFilter = (props: AttributeListFilterProps) => {
       </List>
     </Paper>
   )
-}
+})
